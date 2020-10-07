@@ -4,14 +4,47 @@
     <meta charset="UTF-8">
     <title>Discover a random beer</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            background-color: #333;
+        }
+        body, #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #container {
+            background-color: #83d0f2;
+            border-radius: 50%;
+            font-family: "Open Sans";
+            text-transform: uppercase;
+            color: #333;
+            width: 200px;
+            height: 200px;
+        }
+        #newRandomBeer {
+            background: none;
+            border: none;
+            font-weight: bold;
+        }
+        #newRandomBeer:focus {
+            border:none;
+            outline: none;
+            color: #2d639c;
+        }
+        #newRandomBeer:hover {
+            color: #2d639c;
+        }
+    </style>
 </head>
 <body>
 
-    <div>
+    <div id="container">
         <button id="newRandomBeer">Discover a random beer NOW !</button>
-    </div>
-    <div id="randomBeer">
-
+        <div id="randomBeer"></div>
     </div>
 <script>
     $(document).ready(function () {
