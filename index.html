@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Discover a random beer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
     <div>
-        <button>Discover a random beer NOW !</button>
+        <button id="newRandomBeer">Discover a random beer NOW !</button>
     </div>
     <div id="randomBeer">
 
     </div>
+<script>
+    $(document).ready(function () {
+        $('#newRandomBeer').click(() => {
+            $.get('https://t37llrx7rb.execute-api.us-east-2.amazonaws.com/prod/beers/random', (data) => {
+                $('#randomBeer').html(data)
+            });
+        });
+    });
+</script>
 </body>
 </html>
